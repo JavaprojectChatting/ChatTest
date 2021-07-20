@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -7,15 +8,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
-import javax.swing.JTable;
-import javax.swing.JScrollBar;
-import javax.swing.JLabel;
-import java.awt.SystemColor;
-import javax.swing.JTextArea;
 
 public class ChatTest {
 
@@ -61,17 +61,22 @@ public class ChatTest {
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLayout(new BorderLayout());  //
+		
+		JPanel testJPanel = new JPanel();  //
 		
 		// cardlayout
 		card = new CardLayout();
-		frame.getContentPane().setLayout(card);
+		testJPanel.setLayout(card);  //
 		//frame.getContentPane().setLayout(card);
 		
 		//로그인창
 		JPanel loginPanel = new JPanel();
 		loginPanel.setBackground(new Color(255, 250, 240));
 		loginPanel.setBounds(0, 0, 800, 600);
-		frame.getContentPane().add(loginPanel);
+		//frame.getContentPane().add(loginPanel);
+		testJPanel.add("loginPanel",loginPanel);  //
+		frame.getContentPane().add(testJPanel); //
 		loginPanel.setLayout(null);
 		
 		JPanel inloginPanel = new JPanel();
@@ -137,7 +142,7 @@ public class ChatTest {
 		JButton loginSignupButton = new JButton("SIGN UP");
 		loginSignupButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				card.show(frame,"2");
+				card.show(testJPanel,"signupPanel");
 			}
 		});
 		loginSignupButton.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -148,7 +153,7 @@ public class ChatTest {
 		JButton loginSigninButton = new JButton("SIGN IN");
 		loginSigninButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				card.show(frame,"3");
+				card.show(testJPanel,"chattingPanel");
 			}
 		});
 		loginSigninButton.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -160,7 +165,9 @@ public class ChatTest {
 		JPanel signupPanel = new JPanel();
 		signupPanel.setLayout(null);
 		signupPanel.setBackground(new Color(255, 250, 240));
-		frame.getContentPane().add(signupPanel, "name_3243073249200");
+		// frame.getContentPane().add(signupPanel, "name_3243073249200");
+		testJPanel.add("signupPanel", signupPanel);  //
+		frame.getContentPane().add(testJPanel); //
 		
 		JPanel singinupinPanel = new JPanel();
 		singinupinPanel.setLayout(null);
@@ -207,7 +214,7 @@ public class ChatTest {
 		JButton signinButton = new JButton("SIGN IN");
 		signinButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				card.show(frame,"1");
+				card.show(testJPanel,"loginPanel");
 			}
 		});
 		signinButton.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -286,7 +293,9 @@ public class ChatTest {
 		chattingPanel.setLocation(-9, -41);
 		chattingPanel.setLayout(null);
 		chattingPanel.setBackground(new Color(255, 250, 240));
-		frame.getContentPane().add(chattingPanel, "name_4419250378900");
+		//frame.getContentPane().add(chattingPanel, "name_4419250378900");
+		testJPanel.add("chattingPanel",chattingPanel);  //
+		frame.getContentPane().add(testJPanel); //
 		
 		JPanel adressPanel = new JPanel();
 		adressPanel.setBorder(new LineBorder(new Color(175, 238, 238), 4));
@@ -344,6 +353,6 @@ public class ChatTest {
 		sendButton.setBounds(321, 414, 40, 54);
 		chattinginPanel.add(sendButton);
 		
-		card.show(frame,"1");
+		card.show(testJPanel,"loginPanel");
 	}
 }
