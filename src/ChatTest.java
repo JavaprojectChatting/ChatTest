@@ -20,11 +20,11 @@ import javax.swing.JTextArea;
 public class ChatTest {
 
 	private JFrame frame;
-	private JTextField idTextField;
-	private JTextField pwTextField;
+	private JTextField loginIDTextfield;
+	private JTextField loginPWTextfield;
 	private CardLayout card;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField signIDTextfield;
+	private JTextField signPWTextfield;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
@@ -67,6 +67,7 @@ public class ChatTest {
 		frame.getContentPane().setLayout(card);
 		//frame.getContentPane().setLayout(card);
 		
+		//로그인창
 		JPanel loginPanel = new JPanel();
 		loginPanel.setBackground(new Color(255, 250, 240));
 		loginPanel.setBounds(0, 0, 800, 600);
@@ -88,31 +89,31 @@ public class ChatTest {
 		loginText.setBounds(138, 46, 146, 56);
 		inloginPanel.add(loginText);
 		
-		JTextPane idText = new JTextPane();
-		idText.setBackground(new Color(255, 250, 240));
-		idText.setForeground(new Color(211, 211, 211));
-		idText.setFont(new Font("Arial Black", Font.PLAIN, 26));
-		idText.setText("ID");
-		idText.setBounds(36, 149, 47, 36);
-		inloginPanel.add(idText);
+		JTextPane loginIDText = new JTextPane();
+		loginIDText.setBackground(new Color(255, 250, 240));
+		loginIDText.setForeground(new Color(211, 211, 211));
+		loginIDText.setFont(new Font("Arial Black", Font.PLAIN, 26));
+		loginIDText.setText("ID");
+		loginIDText.setBounds(36, 149, 47, 36);
+		inloginPanel.add(loginIDText);
 		
-		JTextPane pwText = new JTextPane();
-		pwText.setText("PW");
-		pwText.setForeground(new Color(211, 211, 211));
-		pwText.setFont(new Font("Arial Black", Font.PLAIN, 26));
-		pwText.setBackground(new Color(255, 250, 240));
-		pwText.setBounds(36, 228, 47, 36);
-		inloginPanel.add(pwText);
+		JTextPane loginPWText = new JTextPane();
+		loginPWText.setText("PW");
+		loginPWText.setForeground(new Color(211, 211, 211));
+		loginPWText.setFont(new Font("Arial Black", Font.PLAIN, 26));
+		loginPWText.setBackground(new Color(255, 250, 240));
+		loginPWText.setBounds(36, 228, 47, 36);
+		inloginPanel.add(loginPWText);
 		
-		idTextField = new JTextField();
-		idTextField.setBounds(95, 148, 222, 37);
-		inloginPanel.add(idTextField);
-		idTextField.setColumns(10);
+		loginIDTextfield = new JTextField();
+		loginIDTextfield.setBounds(95, 148, 222, 37);
+		inloginPanel.add(loginIDTextfield);
+		loginIDTextfield.setColumns(10);
 		
-		pwTextField = new JTextField();
-		pwTextField.setColumns(10);
-		pwTextField.setBounds(95, 228, 222, 37);
-		inloginPanel.add(pwTextField);
+		loginPWTextfield = new JTextField();
+		loginPWTextfield.setColumns(10);
+		loginPWTextfield.setBounds(95, 228, 222, 37);
+		inloginPanel.add(loginPWTextfield);
 		
 		JButton checkButton = new JButton("check");
 		checkButton.addActionListener(new ActionListener() {
@@ -133,28 +134,29 @@ public class ChatTest {
 		statusLabel.setBounds(95, 182, 222, 28);
 		inloginPanel.add(statusLabel);
 		
-		JButton signupButton = new JButton("SIGN UP");
-		signupButton.addActionListener(new ActionListener() {
+		JButton loginSignupButton = new JButton("SIGN UP");
+		loginSignupButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(frame,"2");
 			}
 		});
-		signupButton.setFont(new Font("Arial", Font.PLAIN, 12));
-		signupButton.setBackground(new Color(175, 238, 238));
-		signupButton.setBounds(96, 322, 86, 36);
-		inloginPanel.add(signupButton);
+		loginSignupButton.setFont(new Font("Arial", Font.PLAIN, 12));
+		loginSignupButton.setBackground(new Color(175, 238, 238));
+		loginSignupButton.setBounds(96, 322, 86, 36);
+		inloginPanel.add(loginSignupButton);
 		
-		JButton signinButton = new JButton("SIGN IN");
-		signinButton.addActionListener(new ActionListener() {
+		JButton loginSigninButton = new JButton("SIGN IN");
+		loginSigninButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(frame,"3");
 			}
 		});
-		signinButton.setFont(new Font("Arial", Font.PLAIN, 12));
-		signinButton.setBackground(new Color(175, 238, 238));
-		signinButton.setBounds(232, 322, 86, 36);
-		inloginPanel.add(signinButton);
+		loginSigninButton.setFont(new Font("Arial", Font.PLAIN, 12));
+		loginSigninButton.setBackground(new Color(175, 238, 238));
+		loginSigninButton.setBounds(232, 322, 86, 36);
+		inloginPanel.add(loginSigninButton);
 		
+		//회원가입창
 		JPanel signupPanel = new JPanel();
 		signupPanel.setLayout(null);
 		signupPanel.setBackground(new Color(255, 250, 240));
@@ -175,24 +177,24 @@ public class ChatTest {
 		signupText.setBounds(117, 10, 207, 56);
 		singinupinPanel.add(signupText);
 		
-		JTextPane idText_1 = new JTextPane();
-		idText_1.setText("ID");
-		idText_1.setForeground(new Color(211, 211, 211));
-		idText_1.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		idText_1.setBackground(new Color(255, 250, 240));
-		idText_1.setBounds(51, 66, 47, 28);
-		singinupinPanel.add(idText_1);
+		JTextPane signIDText = new JTextPane();
+		signIDText.setText("ID");
+		signIDText.setForeground(new Color(211, 211, 211));
+		signIDText.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		signIDText.setBackground(new Color(255, 250, 240));
+		signIDText.setBounds(51, 66, 47, 28);
+		singinupinPanel.add(signIDText);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(51, 94, 299, 37);
-		singinupinPanel.add(textField);
+		signIDTextfield = new JTextField();
+		signIDTextfield.setColumns(10);
+		signIDTextfield.setBounds(51, 94, 299, 37);
+		singinupinPanel.add(signIDTextfield);
 		
-		JButton checkButton_1 = new JButton("check");
-		checkButton_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		checkButton_1.setBackground(new Color(175, 238, 238));
-		checkButton_1.setBounds(362, 94, 65, 36);
-		singinupinPanel.add(checkButton_1);
+		JButton idCheckButton = new JButton("check");
+		idCheckButton.setFont(new Font("Arial", Font.PLAIN, 12));
+		idCheckButton.setBackground(new Color(175, 238, 238));
+		idCheckButton.setBounds(362, 94, 65, 36);
+		singinupinPanel.add(idCheckButton);
 		
 		JTextPane statusLabel_1 = new JTextPane();
 		statusLabel_1.setText("\uC77C\uB2E8 \uBB50\uB77C\uB3C4 \uC368\uB193\uC790");
@@ -202,43 +204,43 @@ public class ChatTest {
 		statusLabel_1.setBounds(234, 128, 117, 24);
 		singinupinPanel.add(statusLabel_1);
 		
-		JButton signupButton_1 = new JButton("SIGN IN");
-		signupButton_1.addActionListener(new ActionListener() {
+		JButton signinButton = new JButton("SIGN IN");
+		signinButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(frame,"1");
 			}
 		});
-		signupButton_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		signupButton_1.setBackground(new Color(175, 238, 238));
-		signupButton_1.setBounds(102, 425, 86, 36);
-		singinupinPanel.add(signupButton_1);
+		signinButton.setFont(new Font("Arial", Font.PLAIN, 12));
+		signinButton.setBackground(new Color(175, 238, 238));
+		signinButton.setBounds(102, 425, 86, 36);
+		singinupinPanel.add(signinButton);
 		
-		JButton signinButton_1 = new JButton("SIGN UP");
-		signinButton_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		signinButton_1.setBackground(new Color(175, 238, 238));
-		signinButton_1.setBounds(238, 425, 86, 36);
-		singinupinPanel.add(signinButton_1);
+		JButton signupButton = new JButton("SIGN UP");
+		signupButton.setFont(new Font("Arial", Font.PLAIN, 12));
+		signupButton.setBackground(new Color(175, 238, 238));
+		signupButton.setBounds(238, 425, 86, 36);
+		singinupinPanel.add(signupButton);
 		
-		JTextPane idText_1_1 = new JTextPane();
-		idText_1_1.setText("PW");
-		idText_1_1.setForeground(new Color(211, 211, 211));
-		idText_1_1.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		idText_1_1.setBackground(new Color(255, 250, 240));
-		idText_1_1.setBounds(51, 134, 47, 28);
-		singinupinPanel.add(idText_1_1);
+		JTextPane signPWText = new JTextPane();
+		signPWText.setText("PW");
+		signPWText.setForeground(new Color(211, 211, 211));
+		signPWText.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		signPWText.setBackground(new Color(255, 250, 240));
+		signPWText.setBounds(51, 134, 47, 28);
+		singinupinPanel.add(signPWText);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(51, 162, 299, 37);
-		singinupinPanel.add(textField_1);
+		signPWTextfield = new JTextField();
+		signPWTextfield.setColumns(10);
+		signPWTextfield.setBounds(51, 162, 299, 37);
+		singinupinPanel.add(signPWTextfield);
 		
-		JTextPane idText_1_1_1 = new JTextPane();
-		idText_1_1_1.setText("Email address");
-		idText_1_1_1.setForeground(new Color(211, 211, 211));
-		idText_1_1_1.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		idText_1_1_1.setBackground(new Color(255, 250, 240));
-		idText_1_1_1.setBounds(52, 272, 148, 28);
-		singinupinPanel.add(idText_1_1_1);
+		JTextPane emailText = new JTextPane();
+		emailText.setText("Email address");
+		emailText.setForeground(new Color(211, 211, 211));
+		emailText.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		emailText.setBackground(new Color(255, 250, 240));
+		emailText.setBounds(52, 272, 148, 28);
+		singinupinPanel.add(emailText);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
@@ -250,26 +252,26 @@ public class ChatTest {
 		textField_3.setBounds(53, 232, 299, 37);
 		singinupinPanel.add(textField_3);
 		
-		JTextPane idText_1_2 = new JTextPane();
-		idText_1_2.setText("Confirm PW");
-		idText_1_2.setForeground(new Color(211, 211, 211));
-		idText_1_2.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		idText_1_2.setBackground(new Color(255, 250, 240));
-		idText_1_2.setBounds(53, 203, 222, 28);
-		singinupinPanel.add(idText_1_2);
+		JTextPane confirmPWText = new JTextPane();
+		confirmPWText.setText("Confirm PW");
+		confirmPWText.setForeground(new Color(211, 211, 211));
+		confirmPWText.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		confirmPWText.setBackground(new Color(255, 250, 240));
+		confirmPWText.setBounds(53, 203, 222, 28);
+		singinupinPanel.add(confirmPWText);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(53, 369, 299, 37);
 		singinupinPanel.add(textField_4);
 		
-		JTextPane idText_1_1_1_1 = new JTextPane();
-		idText_1_1_1_1.setText("Nickname");
-		idText_1_1_1_1.setForeground(new Color(211, 211, 211));
-		idText_1_1_1_1.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		idText_1_1_1_1.setBackground(new Color(255, 250, 240));
-		idText_1_1_1_1.setBounds(53, 340, 117, 28);
-		singinupinPanel.add(idText_1_1_1_1);
+		JTextPane nicknameText = new JTextPane();
+		nicknameText.setText("Nickname");
+		nicknameText.setForeground(new Color(211, 211, 211));
+		nicknameText.setFont(new Font("Arial Black", Font.PLAIN, 18));
+		nicknameText.setBackground(new Color(255, 250, 240));
+		nicknameText.setBounds(53, 340, 117, 28);
+		singinupinPanel.add(nicknameText);
 		
 		JTextPane statusLabel_1_1 = new JTextPane();
 		statusLabel_1_1.setText("\uC77C\uB2E8 \uBB50\uB77C\uB3C4 \uC368\uB193\uC790");
@@ -279,6 +281,7 @@ public class ChatTest {
 		statusLabel_1_1.setBounds(234, 267, 117, 24);
 		singinupinPanel.add(statusLabel_1_1);
 		
+		//채팅창
 		JPanel chattingPanel = new JPanel();
 		chattingPanel.setLocation(-9, -41);
 		chattingPanel.setLayout(null);
@@ -292,13 +295,13 @@ public class ChatTest {
 		chattingPanel.add(adressPanel);
 		adressPanel.setLayout(null);
 		
-		JTextPane idText_2 = new JTextPane();
-		idText_2.setText("\uBBFC\uCD08\uC655");
-		idText_2.setBounds(63, 12, 80, 36);
-		idText_2.setForeground(new Color(105, 105, 105));
-		idText_2.setFont(new Font("Arial Black", Font.BOLD, 20));
-		idText_2.setBackground(new Color(255, 250, 240));
-		adressPanel.add(idText_2);
+		JTextPane userIDText = new JTextPane();
+		userIDText.setText("\uBBFC\uCD08\uC655");
+		userIDText.setBounds(63, 12, 80, 36);
+		userIDText.setForeground(new Color(105, 105, 105));
+		userIDText.setFont(new Font("Arial Black", Font.BOLD, 20));
+		userIDText.setBackground(new Color(255, 250, 240));
+		adressPanel.add(userIDText);
 		
 		table = new JTable();
 		table.setBounds(12, 51, 349, 417);
@@ -308,9 +311,9 @@ public class ChatTest {
 		scrollBar.setBounds(344, 51, 17, 417);
 		adressPanel.add(scrollBar);
 		
-		JLabel lblNewLabel = new JLabel("Image");
-		lblNewLabel.setBounds(12, 10, 47, 44);
-		adressPanel.add(lblNewLabel);
+		JLabel userImageLabel = new JLabel("Image");
+		userImageLabel.setBounds(12, 10, 47, 44);
+		adressPanel.add(userImageLabel);
 		
 		JTextPane addressText = new JTextPane();
 		addressText.setBounds(4, 2, 210, 56);
@@ -320,26 +323,26 @@ public class ChatTest {
 		addressText.setFont(new Font("Arial Black", Font.BOLD, 32));
 		addressText.setBackground(new Color(255, 250, 240));
 		
-		JPanel adressPanel_1 = new JPanel();
-		adressPanel_1.setLayout(null);
-		adressPanel_1.setBorder(new LineBorder(new Color(175, 238, 238), 4));
-		adressPanel_1.setBackground(new Color(255, 250, 240));
-		adressPanel_1.setBounds(386, 41, 373, 478);
-		chattingPanel.add(adressPanel_1);
+		JPanel chattinginPanel = new JPanel();
+		chattinginPanel.setLayout(null);
+		chattinginPanel.setBorder(new LineBorder(new Color(175, 238, 238), 4));
+		chattinginPanel.setBackground(new Color(255, 250, 240));
+		chattinginPanel.setBounds(386, 41, 373, 478);
+		chattingPanel.add(chattinginPanel);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(12, 413, 297, 55);
-		adressPanel_1.add(textArea);
+		JTextArea dialogTextarea = new JTextArea();
+		dialogTextarea.setBounds(12, 413, 297, 55);
+		chattinginPanel.add(dialogTextarea);
 		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBounds(12, 10, 349, 393);
-		adressPanel_1.add(textArea_1);
+		JTextArea sendTextarea = new JTextArea();
+		sendTextarea.setBounds(12, 10, 349, 393);
+		chattinginPanel.add(sendTextarea);
 		
-		JButton btnNewButton = new JButton("\uC804");
-		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
-		btnNewButton.setBackground(new Color(175, 238, 238));
-		btnNewButton.setBounds(321, 414, 40, 54);
-		adressPanel_1.add(btnNewButton);
+		JButton sendButton = new JButton("\uC804");
+		sendButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
+		sendButton.setBackground(new Color(175, 238, 238));
+		sendButton.setBounds(321, 414, 40, 54);
+		chattinginPanel.add(sendButton);
 		
 		card.show(frame,"1");
 	}
