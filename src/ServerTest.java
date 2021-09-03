@@ -96,6 +96,7 @@ public class ServerTest extends Thread{
 			BufferedReader reader = new BufferedReader(
 					new InputStreamReader(socket.getInputStream()));
 			writer.println("서버 연결 완료. 닉네임을 입력해주세요.");
+			writer.flush();
 			name = reader.readLine();
 			
 			sendAll(name + "님이 접속했습니다.");

@@ -26,8 +26,7 @@ public class SenderThread extends Thread {
 				String str = reader.readLine();
 				if (str.equals("bye"))
 					break;
-				//writer.println(str);//수신 내용 작성
-				writer.println(str);//수신 내용 작성  //
+				writer.println(str);//수신 내용 작성 
 				writer.flush();
 			}
 			
