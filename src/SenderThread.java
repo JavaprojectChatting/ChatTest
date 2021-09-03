@@ -1,10 +1,14 @@
 import java.io.BufferedReader;
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
+//메시지 송신하는 스레드, 클라이언트->서버
 public class SenderThread extends Thread {
 	// 소켓
 	Socket socket;
+	Scanner scanner = new Scanner(System.in); //
+	
 	SenderThread(Socket socket) {
 		this.socket = socket;
 	}
@@ -22,7 +26,8 @@ public class SenderThread extends Thread {
 				String str = reader.readLine();
 				if (str.equals("bye"))
 					break;
-				writer.println(str);//수신 내용 작성
+				//writer.println(str);//수신 내용 작성
+				writer.println(str);//수신 내용 작성  //
 				writer.flush();
 			}
 			

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.net.*;
 
@@ -9,27 +10,18 @@ public class Client {
 		
 		try {
 			// 192.168.0.11 server IP
-			socket = new Socket("192.168.0.11",9002);
+			socket = new Socket("192.168.0.5",9006);
 			
-			// 송수신 Stream
-			BufferedReader reader = new BufferedReader(
-					new InputStreamReader(socket.getInputStream()));
-			PrintWriter writer = new PrintWriter(socket.getOutputStream());
+			//송수신 스레드 생성
+			Thread senderThread = new SenderThread(socket);  //클라이언트->서버
+			Thread receiverThread = new ReceiverThread(socket);  //서버->클라이언트
 			
-			writer.println("Hello, Server");
-			writer.flush();
-			
-			String str = reader.readLine();
-			System.out.println(str);
+			//송수신 스레드 실행
+			senderThread.start();
+			receiverThread.start();
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		} finally {
-			try {
-				socket.close();
-			} catch (Exception ignored) {
-				
-			}
 		}
 	}
 
