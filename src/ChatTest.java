@@ -325,9 +325,9 @@ public class ChatTest {
 		adressPanel.add(userImageLabel);
 		
 		JTextPane addressText = new JTextPane();
+		addressText.setText("Chatting");
 		addressText.setBounds(4, 2, 210, 56);
 		chattingPanel.add(addressText);
-		addressText.setText("ADDRESS");
 		addressText.setForeground(new Color(175, 238, 238));
 		addressText.setFont(new Font("Arial Black", Font.BOLD, 32));
 		addressText.setBackground(new Color(255, 250, 240));
