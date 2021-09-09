@@ -1,1 +1,5 @@
 # ChatTest
+
+# TODO
+## JWT
+## GUI
